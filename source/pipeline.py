@@ -3,7 +3,7 @@
 
 
 
-class pipeline(Object):
+class pipeline():
     """
     Object for importing and cleaning electrolarynx video feeds prior to prediction
     """
