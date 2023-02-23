@@ -6,6 +6,9 @@ __pycache__/
 # our data directory
 data/
 
+# temporary audio file built by ipython display
+__temp__.mp3
+
 # Pycharm .idea/ dir
 .idea
 
