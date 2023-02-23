@@ -1,0 +1,10 @@
+numpy
+pandas
+Wave
+moviepy
+SpeechRecognition
+matplotlib
+scipy
+boxsdk
+treelib
+boxsdk[jwt]

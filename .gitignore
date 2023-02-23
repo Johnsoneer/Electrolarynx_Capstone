@@ -3,6 +3,9 @@ __pycache__/
 *.py[cod]
 *$py.class
 
+# our data directory
+data/
+
 # Pycharm .idea/ dir
 .idea
 

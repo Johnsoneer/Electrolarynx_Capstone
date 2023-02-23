@@ -19,6 +19,7 @@ class pipeline():
             - imported videos (object? tbd)
         """
         #TODO: implement pipeline.import_videos()
+        
         return None
 
     def get_audio(self):
@@ -41,4 +42,6 @@ class pipeline():
         #TODO: implement pipeline.feature_engineering()
         return None
 
-    
+if __name__=="__main__":
+    pipe = pipeline()
+    pipe.import_videos("url")
