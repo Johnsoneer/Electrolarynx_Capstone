@@ -105,7 +105,7 @@ class datasetBuilder():
             """
             if node.type == "folder":
                 for item in node.get_items():
-                    populate_files(item, node.name)
+                    populate_files(item, parent+"/"+node.name)
             elif node.type == "file":
                 name = node.name
                 id = node.id
