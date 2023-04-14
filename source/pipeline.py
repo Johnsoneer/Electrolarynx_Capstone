@@ -2,8 +2,8 @@ import pandas as pd
 import numpy as np
 import os
 import wave, math, contextlib
-import speech_recognition as sr
-from moviepy.editor import AudioFileClip
+# import speech_recognition as sr
+# from moviepy.editor import AudioFileClip
 import matplotlib.pyplot as plt
 
 # change working directory to capstone home
@@ -25,7 +25,9 @@ class pipeline():
             - sound_array(arr): array of sound
             - uadioclip(obj): AudioFileClip() object
         """
-        audio_filename = video_path.split('/')[-1].replace('.mp4','.wav')
+        print("VIDEOPATH")
+        print(video_path)
+        audio_filename =video_path.split('/')[-1].replace('.mp4','.wav')
         audioclip = AudioFileClip(self.data_directory+video_path)
         sound_array = audioclip.to_soundarray()
 
