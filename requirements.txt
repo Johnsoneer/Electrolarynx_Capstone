@@ -8,3 +8,5 @@ scipy
 boxsdk
 treelib
 boxsdk[jwt]
+jiwer
+num2words
