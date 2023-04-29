@@ -5,17 +5,16 @@ import shutil
 
 
 class datasetBuilder():
-    def __init__(self, 
-                 shared_folder_url = "https://virginia.app.box.com/s/02c54h85czvwlfxsg9lu5n4zfatdmwqd"):
+    def __init__(self, shared_folder_url = "https://virginia.app.box.com/s/02c54h85czvwlfxsg9lu5n4zfatdmwqd"):
         self.shared_folder_url = shared_folder_url
         
     def set_env_variables(self):
         # You'll need a Box developer token to pull our data.
-        # Generate one at this URL: https://virginia.app.box.com/developers/console/app/1957103/configuration 
-    
+        # Generate one at this URL:https://virginia.app.box.com/developers/console/app/1957103/configuration 
+        
         dev_url = 'https://virginia.app.box.com/developers/console'
         print("*** You'll need API credentials to move forward ***")
-        print(f"     create credentials in the box developers console: {dev_url}")
+        print("create credentials in the box developers console: {}".format(dev_url))
         client_id = input("Please enter your CLIENT_ID: ")
         client_secret = input("Please enter your CLIENT_SECRET: ")
         developer_token = input("Please enter your DEVELOPER_TOKEN: ")
@@ -105,7 +104,7 @@ class datasetBuilder():
             """
             if node.type == "folder":
                 for item in node.get_items():
-                    populate_files(item, node.name)
+                    populate_files(item, parent+"/"+node.name)
             elif node.type == "file":
                 name = node.name
                 id = node.id
@@ -137,7 +136,7 @@ class datasetBuilder():
         
 # Run the above to build the dataset
 if __name__=="__main__":
-    
-    builder = datasetBuilder()
+    folder = input("input box folder URL: ")
+    builder = datasetBuilder(shared_folder_url = folder)
     builder.connect_to_box()
     builder.download_dataset()
